@@ -20,4 +20,4 @@ This is an Bug/Issue Tracker App in which we can create project and track its is
 - **MongoDB:** NoSQL database for storing data.
 
 
-The website is live on: https://url/
+The website is live on: https://bug-tracker-a01w.onrender.com/
