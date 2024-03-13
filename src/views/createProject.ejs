@@ -1,0 +1,37 @@
+<div class="max-w-md mx-auto my-8 p-6 bg-white rounded-lg shadow-md">
+    <h4 class="text-xl font-bold mb-4">Add Project</h4>
+
+    <form action="/create" method="POST" class="space-y-4">
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name"> Name </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Project name" name="name" value="<%= data.name || '' %>">
+        </div>
+
+        <div>
+            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+            <input type="text" id="description" name="description" value="<%= data.description || '' %>" placeholder="Project description"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div>
+            <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author</label>
+            <input type="text" id="author" name="author" value="<%= data.author || '' %>" placeholder="Author's name"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+
+    <% if(error) { %>
+        <p class="font-semibold text-red-500 py-3">
+            <%= error %>
+        </p>
+    <% } %>
+
+    <% if(success) { %>
+        <p class="font-semibold text-green-500 py-3">
+            <%= message %>
+        </p>
+    <% } %>
+</div>

@@ -1,0 +1,31 @@
+<div>
+    <div class="flex justify-between items-center mb-8"> 
+        <h1 class="text-3xl font-bold">Projects</h1>
+        <a href="/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">+ Add New</a>
+    </div>
+
+    <% if(error) { %>
+        <p style="background-color: red;"><%= error %></p>
+        <p><a href="/create">add new project</a></p>
+    <% } %>
+
+    <% if(data) { %>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards -->
+            <% data.forEach(project => { %>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold mb-2"><%= project.name %></h2>
+                    <p class="text-gray-600 mb-4"><%= project.description %></p>
+                    <p class="text-gray-500">Author: <%= project.author %></p>
+                    <a href="/issues/<%= project._id %>" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Issues</a>
+                </div>
+
+            
+            <% }) %>
+
+        </div>
+    
+    <% } %>
+</div>
